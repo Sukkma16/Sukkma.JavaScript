@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aplikasi Mencetak Nilai Mahasiswa </title>
+</head>
+<body>
+    <script>
+        alert ("Aplikasi Mencetak Nilai Mahasiswa" + "\nNama : SUKMA" + "\nNIM : H233600464");
+        let nama = prompt ("Masukkan Nama Anda:");
+        let nilai = prompt("Masukkan nilai anda :");
+
+        nilai = parseInt(nilai);
+
+
+        function cekNilai(nilai) {
+            let nilaihuruf = ""; 
+            let ucapan = ""; 
+
+            if (nilai >= 80 && nilai <= 100) {
+                nilaihuruf = "A";
+                ucapan = "Selamat Anda Lulus";
+            } else if (nilai >= 70 && nilai < 79) {
+                nilaihuruf = "B";
+                ucapan = "Selamat Anda Lulus";
+            } else if (nilai >= 60 && nilai < 69) {
+                nilaihuruf = "C";
+                ucapan = "Selamat Anda Lulus, Belajar Giat Lagi";
+            } else if (nilai >= 50 && nilai < 59) {
+                nilaihuruf = "D";
+                ucapan = "Selamat Anda Lulus, Belajar Giat Lagi";
+            } else if (nilai >= 0 && nilai < 49) {
+                nilaihuruf = "E";
+                ucapan = "Mohon Maaf Anda Harus Mengulang";
+            } else {
+                nilaihuruf = "Tidak Valid";
+                ucapan = "Nilai Yang Anda Masukkan Tidak Valid !!!";
+            }      
+
+            return { nilaihuruf, ucapan };
+        }
+
+        const hasil = cekNilai(nilai);
+        
+        alert ("Hallo Selamat Datang " + nama + "\n\nNilai Anda  " + hasil.nilaihuruf + "\n" + hasil.ucapan);
+    </script>
+</body>
+</html>
